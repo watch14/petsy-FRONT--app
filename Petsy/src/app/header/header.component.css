@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 45px;
+    height: 44px;
 }
 
 
@@ -30,6 +30,8 @@
     justify-content: space-between;
     width: 100%;
     max-width: 1260px;
+    padding: 0 40px;
+    gap: 40px;
 }
 
 .allPetsy{
@@ -38,7 +40,8 @@
     justify-content: space-between;
     max-width: 170px;
     width: 100%;
-    padding: 0 8px 0 20px;
+    padding: 0 8px 0 0;
+    gap: 20px;
 }
 
 
@@ -62,41 +65,139 @@
     justify-content: space-between;
     max-width: 170px;
     width: 100%;
-    padding: 0 20px 0 8px;
+    padding: 0 0px 0 8px;
+    gap: 12px;
+
 }
 
 
 .allPetsy a, .languages a{
-    padding: 0 8px;
-    
     color: var(--black-700, #222);
     font-family: Montserrat;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
-    line-height: 19px; /* 158.333% */
+    line-height: 19px;
     letter-spacing: 0.36px;
 }
 
-
-@media (max-width: 815px) {
-    .openFrom {
-        display: none;
-    }
+/* bot header */
+/* bot header */
+a{
+    text-decoration: none;
 }
-/* bot header */
-/* bot header */
 
 
 
+.botHeader {
+    margin: 0px;
+    border-bottom: 3px solid #EBEBEB;
+
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+}
+
+.botContainer{
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1260px;
+    padding: 0 40px;
+    gap: 40px;
+
+}
+.logo{
+    padding-top: 4px;
+    height: 44px;
+}
+
+.animalHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 420px;
+    gap: 12px;
+}
+
+.ani{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+}
+.ani img{
+    padding-right: 8px;
+}
+
+.serUser{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    gap: 16px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+
+}
+.ppic{
+    width: 40px;
+    height: 40px;
+    background-color: #FFD43C;
+    border-radius: 50px;
+}
 
 
 
 
 .search {
+    width: 100%;
+    
+    height: 40px;
+    border-radius: 60px;
+    background: var(--white-500, #EBEBEB);
+
+    border: 0px;
     background-image: url('../../assets/images/vectors/searchVector.svg');
-    background-size: 24px; /* Adjust the size of the icon */
+    background-size: 20px;
     background-repeat: no-repeat;
-    background-position: 8px center; /* Adjust the position of the icon horizontally */
-    padding-left: 32px; /* Make space for the icon */
+    background-position: 12px center; 
+    padding-left: 40px; 
+}
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+    .account{
+        display: none;
+    }
+}
+
+@media (max-width: 910px) {
+    .openFrom, .animalHeader{
+        display: none;
+    }
 }
