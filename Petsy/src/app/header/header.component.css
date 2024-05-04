@@ -48,11 +48,6 @@
     gap: 12px;
 }
 
-@media (max-width: 815px) {
-    .openFrom {
-        display: none;
-    }
-}
 
 
 .phone{
@@ -71,10 +66,9 @@
 }
 
 
-
 .allPetsy a, .languages a{
     padding: 0 8px;
-
+    
     color: var(--black-700, #222);
     font-family: Montserrat;
     font-size: 12px;
@@ -84,5 +78,25 @@
     letter-spacing: 0.36px;
 }
 
+
+@media (max-width: 815px) {
+    .openFrom {
+        display: none;
+    }
+}
 /* bot header */
 /* bot header */
+
+
+
+
+
+
+
+.search {
+    background-image: url('../../assets/images/vectors/searchVector.svg');
+    background-size: 24px; /* Adjust the size of the icon */
+    background-repeat: no-repeat;
+    background-position: 8px center; /* Adjust the position of the icon horizontally */
+    padding-left: 32px; /* Make space for the icon */
+}
