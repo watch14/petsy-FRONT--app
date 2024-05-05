@@ -1,0 +1,74 @@
+a{
+    text-decoration: none;
+}
+
+.wraper{
+    margin: 0px;
+    max-width: 1440px;
+    padding: 60px 40px;
+    margin-inline: auto;
+}
+
+h1{
+    color: #000;
+    font-family: "Baloo Tamma 2";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 50px; /* 113.636% */
+    letter-spacing: 0.44px;
+    margin: 0 0 20px;
+}
+
+.container {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+
+}
+
+.category{
+    border-radius: 15px;
+    background: var(--yellow-500, #FFD43C);
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+}
+
+img{
+    max-width: 160px;
+    display: block;
+    position: absolute;
+    right: 0; 
+    bottom: 0; 
+}
+
+
+p{
+    margin: 0;
+
+}
+.animalName{
+    color: #000;
+    font-family: "Baloo Tamma 2";
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -1.32px;
+    line-height: 24.4px; /* 73.939% */
+    padding: 30px 0 0 20px;
+}
+
+.adopt{
+    color: #000;
+    font-family: "Baloo Tamma 2";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.88px;
+    padding-left: 20px;
+}
+
