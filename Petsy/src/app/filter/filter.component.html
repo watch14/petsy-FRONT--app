@@ -1,1 +1,97 @@
-<p>filter works!</p>
+<div class="wraper">
+  <div class="filter">
+    <p>Filter</p>
+
+    <div class="all-dropdowns">
+      <div class="dropdown">
+        <p for="Species">Specie</p>
+        <select name="Species">
+          <option value="">Dog</option>
+          <option value="">Cat</option>
+          <option value="">Bird</option>
+          <option value="">fish</option>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <p for="Breeds">Breed:</p>
+        <select name="Breeds">
+          <option value="">Labrador</option>
+          <option value="">Caniche</option>
+          <option value="">Titi</option>
+          <option value="">Coco</option>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <p for="Genders">Gender</p>
+        <select name="Genders">
+          <option value="">Male</option>
+          <option value="">Female</option>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <p for="Sizes">Size</p>
+        <select name="Sizes">
+          <option value="">Small</option>
+          <option value="">Medium</option>
+          <option value="">Big</option>
+          <option value="">Titan</option>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <p for="Locations">Location</p>
+        <select name="Locations">
+          <option value="">Ariana</option>
+          <option value="">Beja</option>
+          <option value="">Ben Arous</option>
+          <option value="">Bizerte</option>
+          <option value="">Gabes</option>
+          <option value="">Gafsa</option>
+          <option value="">Jendouba</option>
+          <option value="">Kairouan</option>
+          <option value="">Kasserine</option>
+          <option value="">Kebili</option>
+          <option value="">Kef</option>
+          <option value="">Mahdia</option>
+          <option value="">Manouba</option>
+          <option value="">Medenine</option>
+          <option value="">Monastir</option>
+          <option value="">Nabeul</option>
+          <option value="">Sfax</option>
+          <option value="">Sidi Bouzid</option>
+          <option value="">Siliana</option>
+          <option value="">Sousse</option>
+          <option value="">Tataouine</option>
+          <option value="">Tozeur</option>
+          <option value="">Tunis</option>
+          <option value="">Zaghouan</option>
+        </select>
+      </div>
+    </div>
+    <button class="search">Search</button>
+  </div>
+
+  <div class="filtred-pets">
+    <h1>Finding Pets For You...</h1>
+    <div *ngFor="let pet of pets; let i = index" class="pet-grid">
+      <img [src]="pet.petPicture" [alt]="pet.petName" />
+      <p>Name: {{ pet.petName }}</p>
+      <p>Gender: {{ pet.petGender }}</p>
+      <div class="adopt-like">
+        <button>Adopt Pet</button>
+        <img
+          [src]="
+            pet.isFavorite
+              ? '../../assets/images/vectors/favorite.svg'
+              : '../../assets/images/vectors/favoriteNotClicked.svg'
+          "
+          [alt]="pet.isFavorite ? 'Favorite' : 'Not Favorite'"
+          (click)="toggleFavorite(pet)"
+        />
+      </div>
+    </div>
+  </div>
+</div>

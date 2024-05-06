@@ -1,11 +1,11 @@
 .bigPicture {
     display: flex;
-    align-items: right;
+    align-items: center;
     justify-content: space-between;
     padding: 0 0 0 40px;
     background-image: url('../../assets/images/CarousellePictures/yellowBG.png');
     background-size: cover;
-    background-position: top;
+    background-position: top right;
 
 }
 
@@ -50,6 +50,7 @@
     font-style: normal;
     font-weight: 400;
     letter-spacing: 8px;
+    
 }
 
 
