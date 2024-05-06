@@ -50,6 +50,10 @@
     flex-direction: row;
     gap: 12px;
 }
+.nb{
+    width: 100%;
+}
+
 
 
 
@@ -60,6 +64,7 @@
 }
 
 .languages{
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
