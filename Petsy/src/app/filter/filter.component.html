@@ -76,10 +76,19 @@
 
   <div class="filtred-pets">
     <h1>Finding Pets For You...</h1>
-    <div *ngFor="let pet of pets; let i = index" class="pet-grid">
-      <img [src]="pet.petPicture" [alt]="pet.petName" />
-      <p>Name: {{ pet.petName }}</p>
-      <p>Gender: {{ pet.petGender }}</p>
+    <div *ngFor="let pet of pets; let i = index" class="pet-box">
+      <img class="pet-image" [src]="pet.petPicture" [alt]="pet.petName" />
+      <p class="pet-name">{{ pet.petName }}</p>
+      <div class="gender-age">
+        <p class="pet-gender">
+          Gender: <strong>{{ pet.petGender }}</strong>
+        </p>
+        <p class="gender-age">-</p>
+        <p class="pet-age">
+          Age: <strong>{{ pet.petAge }}</strong>
+        </p>
+      </div>
+      <!-- Display petAge -->
       <div class="adopt-like">
         <button>Adopt Pet</button>
         <img

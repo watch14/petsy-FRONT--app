@@ -9,16 +9,16 @@ import { Component } from '@angular/core';
   styleUrl: './filter.component.css'
 })
 export class FilterComponent {
-  pets: { petPicture: string, petName: string, petGender: string, isFavorite: boolean }[] = [
-    { petPicture: "../../assets/images/pet_pics/pet (1).png", petName: "Pomeranian White", petGender: "Male", isFavorite: false },
-    { petPicture: "../../assets/images/pet_pics/pet (2).png", petName: "Poodle Tiny Yellow", petGender: "Female", isFavorite: false },
-    { petPicture: "../../assets/images/pet_pics/pet (3).png", petName: "Poodle Tiny Sepia", petGender: "Male", isFavorite: false },
-    { petPicture: "../../assets/images/pet_pics/pet (4).png", petName: "Poodle Tiny Dairy Cow", petGender: "Female", isFavorite: false },
-    { petPicture: "../../assets/images/pet_pics/pet (5).png", petName: "Pomeranian White", petGender: "Male", isFavorite: false },
-    { petPicture: "../../assets/images/pet_pics/pet (6).png", petName: "Pembroke Corgi Cream", petGender: "Female", isFavorite: false },
-    { petPicture: "../../assets/images/pet_pics/pet (7).png", petName: "Alaskan Malamute Grey", petGender: "Male", isFavorite: false },
-    { petPicture: "../../assets/images/pet_pics/pet (8).png", petName: "Pembroke Corgi Tricolor", petGender: "Female", isFavorite: false },
-    { petPicture: "../../assets/images/pet_pics/pet (9).png", petName: "Pomeranian White", petGender: "Male", isFavorite: false }
+  pets: { petPicture: string, petName: string, petGender: string, petAge: number, isFavorite: boolean }[] = [
+    { petPicture: "../../assets/images/pet_pics/pet (1).png", petName: "Pomeranian White", petGender: "Male", petAge: 3, isFavorite: false },
+    { petPicture: "../../assets/images/pet_pics/pet (2).png", petName: "Poodle Tiny Yellow", petGender: "Female", petAge: 2, isFavorite: false },
+    { petPicture: "../../assets/images/pet_pics/pet (3).png", petName: "Poodle Tiny Sepia", petGender: "Male", petAge: 4, isFavorite: false },
+    { petPicture: "../../assets/images/pet_pics/pet (4).png", petName: "Poodle Tiny Dairy Cow", petGender: "Female", petAge: 5, isFavorite: false },
+    { petPicture: "../../assets/images/pet_pics/pet (5).png", petName: "Pomeranian White", petGender: "Male", petAge: 2, isFavorite: false },
+    { petPicture: "../../assets/images/pet_pics/pet (6).png", petName: "Pembroke Corgi Cream", petGender: "Female", petAge: 3, isFavorite: false },
+    { petPicture: "../../assets/images/pet_pics/pet (7).png", petName: "Alaskan Malamute Grey", petGender: "Male", petAge: 4, isFavorite: false },
+    { petPicture: "../../assets/images/pet_pics/pet (8).png", petName: "Pembroke Corgi Tricolor", petGender: "Female", petAge: 5, isFavorite: false },
+    { petPicture: "../../assets/images/pet_pics/pet (9).png", petName: "Pomeranian White", petGender: "Male", petAge: 3, isFavorite: false }
   ];
 
   constructor() {

@@ -18,8 +18,8 @@ p{
     margin-inline: auto;
 
     display: grid;
-    gap: 1.5rem;
-    grid-template-columns: 1fr 3fr;
+    gap: 24px;
+    grid-template-columns: 1fr 4fr;
 
 }
 
@@ -32,6 +32,8 @@ p{
 
     border-radius: 15px;
     background: var(--white-500, #EBEBEB);
+    max-width: 296px;
+    max-height: 744px;
 }
 .filter p{
     color: #000;
@@ -62,7 +64,8 @@ p{
 
 select{
     display: flex;
-    width: 261px;
+    min-width: 150px;
+    width: 100%;
     padding: 16px 20px;
     justify-content: space-between;
     align-items: center;
@@ -121,9 +124,11 @@ option{
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
 }
 
-h1 {
+
+.filtred-pets h1{
     grid-column: 1 / -1;
 
     margin: 0;
@@ -135,4 +140,86 @@ h1 {
     font-weight: 600;
     line-height: 50px; /* 113.636% */
     letter-spacing: 0.44px;
+}
+
+.pet-box{
+    display: flex;
+    width: 264px;
+    padding: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    border-radius: 14px;
+    background: var(--white-500, #EBEBEB);
+}
+
+.pet-box .pet-image{
+    border-radius: 9px;
+
+}
+
+.pet-name{
+    color: var(--Neutral-Color-100, #00171F);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21.884px; /* 145.897% */
+}
+.gender-age{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+
+.pet-age, .pet-gender{
+    color: var(--Neutral-Color-60, #667479);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16.413px; /* 150% */
+}
+.gender-age strong{
+    color: var(--Neutral-Color-60, #667479);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16.413px; /* 150% */
+}
+
+.adopt-like{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.adopt-like button{
+    display: flex;
+    height: 32px;
+    padding: 0px 27.356px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 60px;
+    border: 0px;
+    background: var(--yellow-500, #FFD43C);
+
+    color: #222;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18.388px; /* 141.447% */
+    letter-spacing: -0.52px;
+}
+
+.adopt-like img{
+    width: 24px;
+    height: 24px;
 }
