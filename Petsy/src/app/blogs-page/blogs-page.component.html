@@ -1,0 +1,13 @@
+<div class="wraper">
+  <h1>Blogs</h1>
+  <div *ngFor="let blog of blogs" class="blog-box">
+    <img [src]="blog.blogPicture" alt="" />
+
+    <div class="blog-title-content">
+      <h2 class="blog-name">{{ blog.blogName }}</h2>
+      <p class="blog-content">{{ blog.blogContent | slice : 0 : 500 }}...</p>
+      <button class="read-more-btn">Read More</button>
+    </div>
+  </div>
+  <button class="see-all">See all</button>
+</div>

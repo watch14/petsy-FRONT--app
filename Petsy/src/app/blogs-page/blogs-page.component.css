@@ -1,0 +1,129 @@
+.wraper{
+    margin: 0px;
+    max-width: 1440px;
+    padding: 60px 40px;
+    margin-inline: auto;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+
+.blog-box{
+    display: flex;
+    flex-direction: row;
+
+    gap: 30px;
+    
+    padding: 18px;
+    border-radius: 14px;
+    background: var(--white-500, #EBEBEB);
+
+}
+
+.blog-box img{
+    height: 100%;
+    aspect-ratio: 1/1;
+
+    margin-inline: auto;
+
+}
+
+.read-more-btn{
+    width: 100%;
+    height: 36px;
+    max-width: 174px;
+    padding: 0 28px;
+
+    margin-top: 20px;
+    margin-left: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-radius: 60px;
+    background: var(--yellow-500, #FFD43C);
+
+    border: 0px;
+
+    color: var(--black-700, #222);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18.388px; /* 141.447% */
+    letter-spacing: -0.52px;
+    
+}
+
+.blog-title-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+}
+
+.blog-name{
+    color: var(--Neutral-Color-100, #00171F);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+}
+.blog-content {
+    color: var(--Neutral-Color-60, #667479);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 157.143% */
+    letter-spacing: 0.98px;
+}
+
+
+.see-all{
+    display: inline-flex;
+    height: 40px;
+    width: 200px;
+
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    margin-top: 20px;
+    
+    border: 0;
+    border-radius: 60px;
+    background: var(--yellow-200, #FFEFB6);
+
+
+    color: var(--black-700, #222);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18.388px; /* 141.447% */
+    letter-spacing: -0.52px;
+}
+
+
+
+h1, h2, p{
+    margin: 0;
+}
+
+@media (max-width: 636px) {
+    .blog-box{
+        flex-direction: column;
+        gap: 20px;
+    }    
+}
