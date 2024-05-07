@@ -67,11 +67,10 @@
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: right;
     max-width: 170px;
-    width: 100%;
     padding: 0 0px 0 8px;
-    gap: 12px;
+    gap: 20px;
 
 }
 

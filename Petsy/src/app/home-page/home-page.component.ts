@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { CarouselleComponent } from '../carouselle/carouselle.component';
 import { CategorysComponent } from '../categorys/categorys.component';
@@ -9,7 +9,9 @@ import { BlogsPageComponent } from '../blogs-page/blogs-page.component';
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [RouterOutlet, 
+  imports: [RouterOutlet,
+            RouterLink,
+            RouterModule,
             HeaderComponent, 
             CarouselleComponent,
             CategorysComponent,

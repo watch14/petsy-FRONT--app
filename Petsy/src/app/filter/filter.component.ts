@@ -1,10 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-filter',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,
+            RouterLink,
+            RouterModule
+  ],
   templateUrl: './filter.component.html',
   styleUrl: './filter.component.css'
 })
