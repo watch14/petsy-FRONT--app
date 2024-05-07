@@ -10,7 +10,16 @@
     gap: 20px;
 }
 
-
+h1{
+    color: #000;
+    font-family: "Baloo Tamma 2";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 50px; /* 113.636% */
+    letter-spacing: 0.44px;
+    margin: 0 0 20px;
+}
 
 .blog-box{
     display: flex;

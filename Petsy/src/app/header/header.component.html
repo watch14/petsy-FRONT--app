@@ -1,7 +1,8 @@
 <div class="topHeader">
   <div class="container">
     <div class="allPetsy">
-      <a routerLink="/animal_filter">Pets</a>
+      <a routerLink="/">Pets</a>
+      <!-- add Coming Soon page for Store-->
       <a routerLink="/">Store</a>
       <a routerLink="/blogs">Blog</a>
     </div>
@@ -11,7 +12,7 @@
         <p class="nb"><strong>+216-27-600-300</strong></p>
         <!-- 
           <img src="../../assets/images/vectors/arrow down Vector.svg" alt="" />
-         -->
+        -->
       </div>
       <p>Open from 8:00 AM - 6:00 Pm</p>
     </div>
@@ -29,28 +30,30 @@
 
 <div class="botHeader">
   <div class="botContainer">
-    <img src="../../assets/images/logobalck.svg" alt="" class="logo" />
+    <a routerLink="/">
+      <img src="../../assets/images/logobalck.svg" alt="" class="logo" />
+    </a>
 
     <div class="animalHeader">
-      <a href="dogs">
+      <a routerLink="/">
         <div class="ani">
           <img src="../../assets/images/vectors/dogVector.svg" />
           <p>Dogs</p>
         </div>
       </a>
-      <a href="cats">
+      <a routerLink="/">
         <div class="ani">
           <img src="../../assets/images/vectors/catVector.svg" />
           <p>Cats</p>
         </div>
       </a>
-      <a href="birds">
+      <a routerLink="/">
         <div class="ani">
           <img src="../../assets/images/vectors/birdGroup.svg" />
           <p>Birds</p>
         </div>
       </a>
-      <a href="others">
+      <a [routerLink]="['/animal_species']">
         <div class="ani">
           <img src="../../assets/images/vectors/other star Vector.svg" />
           <p>Others</p>

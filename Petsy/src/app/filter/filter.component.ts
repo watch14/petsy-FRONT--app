@@ -29,7 +29,7 @@ export class FilterComponent {
     if (typeof localStorage !== 'undefined') {
       // Load favorite status from local storage
       const storedPetsJson = localStorage.getItem('pets');
-      console.log('Stored Pets:', storedPetsJson); // Log the content of localStorage
+      // console.log('Stored Pets:', storedPetsJson); // Log the content of localStorage
       if (storedPetsJson !== null) {
         const storedPets = JSON.parse(storedPetsJson);
         if (Array.isArray(storedPets) && storedPets.length === this.pets.length) {
