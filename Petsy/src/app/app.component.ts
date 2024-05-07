@@ -1,20 +1,12 @@
-import { CarouselleComponent } from './carouselle/carouselle.component';
+import { HomePageComponent } from './home-page/home-page.component';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
-import { CategorysComponent } from './categorys/categorys.component';
-import { FilterComponent } from './filter/filter.component';
-import { BlogsPageComponent } from './blogs-page/blogs-page.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, 
-            HeaderComponent, 
-            CarouselleComponent,
-            CategorysComponent,
-            FilterComponent,
-            BlogsPageComponent,
+  imports: [HomePageComponent,
+
           ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
