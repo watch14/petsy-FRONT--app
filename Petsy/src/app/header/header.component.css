@@ -129,7 +129,7 @@ a{
     align-items: center;
     width: 100%;
     max-width: 420px;
-    gap: 12px;
+    gap: 28px;
 }
 
 .ani{
@@ -138,11 +138,11 @@ a{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 12px;
+    gap: 6px;
 
 }
 .ani img{
-    padding-right: 8px;
+    width: 20px
 }
 
 .serUser{

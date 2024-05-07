@@ -1,91 +1,14 @@
 <div class="wraper">
   <h1>Pets For You...</h1>
   <div class="container">
-    <a href="">
-      <div class="category">
-        <img src="../../assets/images/animal categorys/dog.png" alt="" />
-        <p class="animalName">Dogs</p>
-        <p class="adopt">To adopt</p>
-      </div>
-    </a>
-    <a href="">
-      <div class="category">
-        <p class="animalName">Cats</p>
-        <p class="adopt">To adopt</p>
-        <img src="../../assets/images/animal categorys/cat.png" alt="" />
-      </div>
-    </a>
-    <a href="">
-      <div class="category">
-        <p class="animalName">Birds</p>
-        <p class="adopt">To adopt</p>
-        <img src="../../assets/images/animal categorys/bird.png" alt="" />
-      </div>
-    </a>
-    <a href="">
-      <div class="category">
-        <p class="animalName">Fishe</p>
-        <p class="adopt">To adopt</p>
-        <img src="../../assets/images/animal categorys/fis.png" alt="" />
-      </div>
-    </a>
-
-    <a href="">
-      <div class="category">
-        <img src="../../assets/images/animal categorys/horse.png" alt="" />
-        <p class="animalName">Horses</p>
-        <p class="adopt">To adopt</p>
-      </div>
-    </a>
-    <a href="">
-      <div class="category">
-        <p class="animalName">Cows</p>
-        <p class="adopt">To adopt</p>
-        <img src="../../assets/images/animal categorys/cow.png" alt="" />
-      </div>
-    </a>
-    <a href="">
-      <div class="category">
-        <p class="animalName">Rabbits</p>
-        <p class="adopt">To adopt</p>
-        <img src="../../assets/images/animal categorys/rabbit.png" alt="" />
-      </div>
-    </a>
-    <a href="">
-      <div class="category">
-        <p class="animalName">Hamsters</p>
-        <p class="adopt">To adopt</p>
-        <img src="../../assets/images/animal categorys/hamster.png" alt="" />
-      </div>
-    </a>
-
-    <a href="">
-      <div class="category">
-        <img src="../../assets/images/animal categorys/duck.png" alt="" />
-        <p class="animalName">Ducks</p>
-        <p class="adopt">To adopt</p>
-      </div>
-    </a>
-    <a href="">
-      <div class="category">
-        <p class="animalName">Goats and Sheeps</p>
-        <p class="adopt">To adopt</p>
-        <img src="../../assets/images/animal categorys/sheep.png" alt="" />
-      </div>
-    </a>
-    <a href="">
-      <div class="category">
-        <p class="animalName">Chickens</p>
-        <p class="adopt">To adopt</p>
-        <img src="../../assets/images/animal categorys/chicken.png" alt="" />
-      </div>
-    </a>
-    <a href="">
-      <div class="category">
-        <p class="animalName">Other Pets</p>
-        <p class="adopt">To adopt</p>
-        <img src="../../assets/images/animal categorys/OtherPets.png" alt="" />
-      </div>
-    </a>
+    <div *ngFor="let animal of animals">
+      <a routerLink="/animal_filter">
+        <div class="category">
+          <img [src]="animal.image" alt="" />
+          <p class="animalName">{{ animal.name }}</p>
+          <p class="adopt">To adopt</p>
+        </div>
+      </a>
+    </div>
   </div>
 </div>
