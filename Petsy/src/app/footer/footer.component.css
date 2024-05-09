@@ -18,12 +18,15 @@ a, p{
     max-width: 1440px;
     padding: 60px 40px;
     margin-inline: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
 }
 
 .top-footer{
     display: grid;
     gap: 60px;
-
     grid-template-columns: 1fr 1fr;
 }
 
@@ -42,11 +45,16 @@ a, p{
     line-height: 24px; /* 150% */
 }
 
-.right footer{
+.right-footer{
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
 
+.social{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
 }
 
 
@@ -59,7 +67,7 @@ a, p{
 
 .terms-privacy{
     display: grid;
-    gap: 150px;
+    gap: 24px;
     grid-template-columns: 1fr 1fr;
 }
 
