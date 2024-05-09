@@ -256,8 +256,7 @@ option{
     }
 
     .search{
-        width: 200px;
-        padding: 16px 24px;
+        max-width: 400px;
         margin-left: auto;
     }
     .all-dropdowns{
