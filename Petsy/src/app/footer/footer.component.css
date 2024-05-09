@@ -25,15 +25,18 @@ a, p{
 }
 
 .top-footer{
-    display: grid;
-    gap: 60px;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
 }
 
 .left-footer{
     display: grid;
     gap: 24px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    max-width: 50%;
 }
 
 .yellow-text{
@@ -48,7 +51,21 @@ a, p{
 .right-footer{
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     gap: 24px;
+
+    width: 30%;
+    margin-left:auto ;
+}
+
+.phone{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.phone, p{
+    font-weight: 600;
 }
 
 .social{
