@@ -4,7 +4,7 @@
     <div *ngFor="let animal of animals">
       <a routerLink="/animal_filter">
         <div class="category">
-          <img [src]="animal.image" alt="" />
+          <img [src]="animal.image" alt="" class="imgs" />
           <p class="animalName">{{ animal.name }}</p>
           <p class="adopt">To adopt</p>
         </div>

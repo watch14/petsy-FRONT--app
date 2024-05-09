@@ -25,7 +25,6 @@ h1{
     gap: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-
 }
 
 .category{
@@ -39,7 +38,7 @@ h1{
 }
 
 img{
-    max-width: 160px;
+    max-height: 195px;
     display: block;
     position: absolute;
     right: 0; 
