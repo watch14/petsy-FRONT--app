@@ -1,9 +1,8 @@
-<p>blog works!</p>
 <div class="wraper">
   <div class="blog-box">
     <h1>{{ blog.blogName }}</h1>
+    <img [src]="blog.blogPicture" />
+    <p>{{ blog.blogContent }}</p>
   </div>
-  <!-- 
-  <app-blogs-page></app-blogs-page>
-   -->
 </div>
+<app-blogs-page></app-blogs-page>
