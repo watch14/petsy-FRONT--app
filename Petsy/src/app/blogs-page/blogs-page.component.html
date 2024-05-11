@@ -1,12 +1,16 @@
 <div class="wraper">
   <h1>Blogs</h1>
   <div *ngFor="let blog of blogs" class="blog-box">
-    <img [src]="blog.blogPicture" alt="" />
+    <img (click)="redirectToBlog(blog)" [src]="blog.blogPicture" alt="" />
 
     <div class="blog-title-content">
-      <h2 class="blog-name">{{ blog.blogName }}</h2>
+      <h2 (click)="redirectToBlog(blog)" class="blog-name">
+        {{ blog.blogName }}
+      </h2>
       <p class="blog-content">{{ blog.blogContent | slice : 0 : 650 }}...</p>
-      <button routerLink="/blog" class="read-more-btn">Read More</button>
+      <button (click)="redirectToBlog(blog)" class="read-more-btn">
+        Read More
+      </button>
     </div>
   </div>
   <button class="see-all">See all</button>
