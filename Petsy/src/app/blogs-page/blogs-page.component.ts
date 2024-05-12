@@ -2,7 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
-
+import mammoth from 'mammoth'; // Import Mammoth.js for Word to HTML conversion
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blogs-page',
@@ -16,19 +17,69 @@ import { Router } from '@angular/router';
 })
 export class BlogsPageComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private sanitizer: DomSanitizer) {}
 
 
-  blogs: {blogPicture: string, blogName: string, blogContent: string}[] = [
-    {blogPicture: "../../assets/images/blog-images/blog_image (1).png", blogName: "Unveiling the Secrets of Pet Nutrition: A Guide to Optimal Health",   blogContent: "Embark on a journey to unlock the secrets of pet nutrition, delving deep into the foundations of optimal health. Discover the power of balanced diets, essential nutrients, and personalized feeding plans, paving the way for vibrant well-being and longevity in our beloved furry companions. Let this comprehensive guide be your compass towards nourishing their bodies and nurturing their spirits, fostering a lifetime of vitality and joy. Unravel the mysteries of pet behavior and gain valuable insights into your furry friend's actions. From separation anxiety to aggression, delve into the underlying causes of behavioral issues and explore effective strategies for addressing them. With patience, understanding, and positive reinforcement, you can strengthen your bond with your pet and create a harmonious environment where both of you can thrive. Embark on a journey to unlock the secrets of pet nutrition, delving deep into the foundations of optimal health. Discover the power of balanced diets, essential nutrients, and personalized feeding plans, paving the way for vibrant well-being and longevity in our beloved furry companions. Let this comprehensive guide be your compass towards nourishing their bodies and nurturing their spirits, fostering a lifetime of vitality and joy. Unravel the mysteries of pet behavior and gain valuable insights into your furry friend's actions. From separation anxiety to aggression, delve into the underlying causes of behavioral issues and explore effective strategies for addressing them. With patience, understanding, and positive reinforcement, you can strengthen your bond with your pet and create a harmonious environment where both of you can thrive. Welcome, fellow pet lovers, to a journey that will unlock the mysteries of pet nutrition, guiding us toward the path of optimal health and vitality for our furry companions. As we embark on this quest, we'll delve deep into the foundations of balanced diets, essential nutrients, and personalized feeding plans, laying the groundwork for a lifetime of well-being and joy. The Foundation of Balanced Diets Just as a sturdy house requires a strong foundation, our pets' health depends on the quality of their diets. A balanced diet for our furry friends consists of a careful combination of proteins, carbohydrates, fats, vitamins, and minerals. Each component plays a crucial role in supporting their overall health and vitality. Proteins, often sourced from meat, fish, or plant-based sources, serve as the building blocks for strong muscles, tissues, and organs. Carbohydrates provide the energy needed for daily activities, while fats play a role in maintaining healthy skin and coat, as well as supporting various bodily functions. Essential Nutrients for Optimal Health Beyond the basic macronutrients, our pets require a variety of essential nutrients to thrive. These include vitamins, minerals, and amino acids, which are necessary for proper growth, development, and immune function. Vitamins such as A, D, E, and B-complex vitamins are crucial for various bodily processes, including vision, bone health, and energy metabolism. Minerals like calcium, phosphorus, and magnesium support bone and teeth health, while trace minerals like zinc and selenium play roles in immune function and antioxidant defense. Amino acids, often referred to as the building blocks of protein, are essential for muscle development, tissue repair, and hormone production. Ensuring that our pets receive adequate levels of these nutrients is essential for promoting their overall well-being. Personalized Feeding Plans: Tailoring Nutrition to Individual Needs Just as each pet has its own unique personality, so too do they have unique nutritional requirements. Factors such as age, breed, size, activity level, and any underlying health conditions must be taken into account when formulating a personalized feeding plan. For example, a senior dog may benefit from a diet rich in joint-supporting nutrients like glucosamine and chondroitin, while a highly active working dog may require a higher protein and calorie content to fuel their energy needs. By tailoring their diet to meet their specific needs, we can ensure that our pets not only survive but thrive. Fostering Vibrant Well-Being and Longevity Ultimately, our goal as pet parents is to provide our furry companions with a lifetime of vitality and joy. By prioritizing balanced diets, essential nutrients, and personalized feeding plans, we can pave the way for optimal health and longevity in our beloved pets. So let this comprehensive guide serve as your compass on this journey toward nourishing your pet's body and nurturing their spirit. Together, we can unlock the secrets of pet nutrition and embark on a path toward vibrant well-being for our furry friend."},
-    {blogPicture: "../../assets/images/blog-images/blog_image (2).png", blogName: "Common Pet Ailments: Understanding Symptoms and Treatment Options", blogContent: "Explore the common ailments that afflict our furry friends, from allergies to digestive issues. Learn to recognize the symptoms and understand the available treatment options, empowering you to provide the best care for your pet's well-being and comfort. Arm yourself with knowledge and compassion to navigate through health challenges and ensure a happy, healthy life for your beloved companion."},
-    {blogPicture: "../../assets/images/blog-images/blog_image (3).png", blogName: "The Importance of Preventive Care: Keeping Your Pet Happy and Healthy", blogContent: "Discover the crucial role of preventive care in maintaining your pet's health and happiness. From regular check-ups to vaccinations and parasite control, proactive measures can ward off illnesses and detect potential problems early on. Learn how to integrate preventive care into your pet's routine, laying the foundation for a long and fulfilling life together filled with love and vitality."},
-    {blogPicture: "../../assets/images/blog-images/blog_image (4).png", blogName: "Decoding Pet Behavior: Insights into Understanding and Addressing Behavioral Issues", blogContent: "Unravel the mysteries of pet behavior and gain valuable insights into your furry friend's actions. From separation anxiety to aggression, delve into the underlying causes of behavioral issues and explore effective strategies for addressing them. With patience, understanding, and positive reinforcement, you can strengthen your bond with your pet and create a harmonious environment where both of you can thrive."},
-];
+  blogs: { blogPicture: string, blogName: string, blogContent: string }[] = [
+    {
+      blogPicture: "../../assets/images/blog-images/blog_image (1).png",
+      blogName: "Unveiling the Secrets of Pet Nutrition",
+      blogContent: "" // Content will be loaded dynamically from Word file
+    },
+    {
+      blogPicture: "../../assets/images/blog-images/blog_image (2).png",
+      blogName: "Common Pet Ailments",
+      blogContent: "" // Content will be loaded dynamically from Word file
+    },
+    {
+      blogPicture: "../../assets/images/blog-images/blog_image (3).png",
+      blogName: "The Importance of Preventive Care",
+      blogContent: "" // Content will be loaded dynamically from Word file
+    },
+    {
+      blogPicture: "../../assets/images/blog-images/blog_image (4).png",
+      blogName: "Decoding Pet Behavior",
+      blogContent: "" // Content will be loaded dynamically from Word file
+    }
+  ];
 
-redirectToBlog(blog: any) {
-  this.router.navigate(['/blog'], { state: { blogData: blog } });
-}
+  
+  ngOnInit(): void {
+    this.blogs.forEach(blog => {
+      this.loadContentFromWordFile(blog);
+    });
+  }
 
+  redirectToBlog(blog: any) {
+    this.router.navigate(['/blog'], { state: { blogData: blog } });
+  }
 
+  loadContentFromWordFile(blog: { blogPicture: string, blogName: string, blogContent: string }) {
+    // Load content from Word file
+    fetch(`../../assets/blogs/${blog.blogName}.docx`)
+      .then(response => response.arrayBuffer())
+      .then(arrayBuffer => {
+        // Convert Word content to HTML
+        mammoth.convertToHtml({ arrayBuffer: arrayBuffer })
+          .then((result: { value: string }) => {
+            // Update the blog content
+            blog.blogContent = result.value;
+          })
+          .catch((err: any) => {
+            console.error(`Error converting Word to HTML for ${blog.blogName}:`, err);
+          });
+      })
+      .catch(error => {
+        console.error(`Error fetching Word file for ${blog.blogName}:`, error);
+      });
+  }
+
+  getFirstParagraph(content: string): SafeHtml {
+    // Use regex to extract the first paragraph
+    const firstParagraphMatch = content.match(/<p>.*?<\/p>/);
+    const firstParagraph = firstParagraphMatch ? firstParagraphMatch[0] : '';
+
+    // Sanitize the first paragraph to prevent XSS attacks
+    return this.sanitizer.bypassSecurityTrustHtml(firstParagraph);
+  }
 }

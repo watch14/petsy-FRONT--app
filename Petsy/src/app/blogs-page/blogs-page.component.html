@@ -7,7 +7,10 @@
       <h2 (click)="redirectToBlog(blog)" class="blog-name">
         {{ blog.blogName }}
       </h2>
-      <p class="blog-content">{{ blog.blogContent | slice : 0 : 650 }}...</p>
+      <div
+        [innerHTML]="getFirstParagraph(blog.blogContent)"
+        class="blog-content"
+      ></div>
       <button (click)="redirectToBlog(blog)" class="read-more-btn">
         Read More
       </button>

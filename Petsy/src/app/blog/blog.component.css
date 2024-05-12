@@ -5,3 +5,52 @@
     margin-inline: auto;
 
 }
+
+
+.blog-box{
+    display: flex;
+    padding: 32px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    border-radius: 15px;
+    background: var(--white-500, #EBEBEB);
+}
+
+
+
+
+.blog-image {
+    float: right; /* Float the image to the right */
+    margin: 16px 0 12px 12px; /* Add margins to create space between the image and text */
+    width: 100%;
+    max-width: 250px;
+}
+  
+.blog-content {
+    color: var(--black-700, #222);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 29px; /* 181.25% */
+    letter-spacing: 0.28px;
+}
+
+h1{
+    margin: 0px;
+}
+
+
+@media (max-width: 636px) {
+    .text-image{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .blog-image{
+        float: none;
+        margin: 0px;
+        margin: auto;
+    }
+
+}
