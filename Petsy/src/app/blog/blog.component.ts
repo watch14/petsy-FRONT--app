@@ -3,11 +3,12 @@ import { BlogsPageComponent } from '../blogs-page/blogs-page.component';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
+
 @Component({
   selector: 'app-blog',
   standalone: true,
   imports: [BlogsPageComponent,
-            CommonModule
+            CommonModule,
   ],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
@@ -23,6 +24,7 @@ export class BlogComponent implements OnInit {
 
     // Log the title of the blog
     console.log('Blog Title:', this.blog.blogName);
-    console.log("B1111111111111");
+    
   }
+
 }

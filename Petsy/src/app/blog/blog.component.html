@@ -1,10 +1,13 @@
 <div class="wraper">
-  <div class="blog-box">
+  <div class="blog-box" *ngIf="blog">
     <h1>{{ blog.blogName }}</h1>
     <div class="text-image">
       <img [src]="blog.blogPicture" class="blog-image" />
       <div [innerHTML]="blog.blogContent" class="blog-content"></div>
     </div>
+  </div>
+  <div *ngIf="!blog">
+    <p>Loading blog...</p>
   </div>
 </div>
 <app-blogs-page></app-blogs-page>

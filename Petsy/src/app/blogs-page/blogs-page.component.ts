@@ -43,16 +43,23 @@ export class BlogsPageComponent {
     }
   ];
 
-  
+
   ngOnInit(): void {
     this.blogs.forEach(blog => {
       this.loadContentFromWordFile(blog);
     });
   }
 
+
   redirectToBlog(blog: any) {
-    this.router.navigate(['/blog'], { state: { blogData: blog } });
+    console.log(blog)
+    this.router.navigate(['/blog'], { 
+      queryParams: { blogname: blog.blogName },
+      state: { blogData: blog }
+    });
   }
+
+
 
   loadContentFromWordFile(blog: { blogPicture: string, blogName: string, blogContent: string }) {
     // Load content from Word file
