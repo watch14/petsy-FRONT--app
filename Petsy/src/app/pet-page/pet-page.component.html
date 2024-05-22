@@ -1,1 +1,31 @@
-<p>pet-page works!</p>
+<div class="wraper">
+  <div class="pet">
+    <div class="carouselle">
+      <img src="../../assets/images/pet_pics/pet (1).png" alt="" />
+    </div>
+    <div class="info">
+      <h1>Titi - Pomeranian White</h1>
+      <div class="about">
+        <h2>About :</h2>
+        <div class="about-wraper">
+          <div class="pet_about" *ngFor="let item of about; let i = index">
+            <p>{{ item }}</p>
+            <p>{{ aboutInfo[i] }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="owner">
+        <h2>Owner Contact info :</h2>
+        <div *ngFor="let item of owner; let last = last" class="ownerinfo">
+          <div class="info-wrapper">
+            <img [src]="item.icone" />
+            <p>{{ item.ownerInfo }}</p>
+          </div>
+          <hr *ngIf="!last" />
+          <!-- Horizontal line -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
