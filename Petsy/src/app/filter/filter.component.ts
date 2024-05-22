@@ -1,13 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
+import { PetPageComponent } from '../pet-page/pet-page.component';
+
 
 @Component({
   selector: 'app-filter',
   standalone: true,
   imports: [CommonModule,
             RouterLink,
-            RouterModule
+            RouterModule,
+            PetPageComponent
   ],
   templateUrl: './filter.component.html',
   styleUrl: './filter.component.css'
@@ -25,7 +29,7 @@ export class FilterComponent {
     { petPicture: "../../assets/images/pet_pics/pet (9).png", petName: "Pomeranian White", petGender: "Male", petAge: 3, isFavorite: false }
   ];
 
-  constructor() {
+  constructor(private router: Router) {
     if (typeof localStorage !== 'undefined') {
       // Load favorite status from local storage
       const storedPetsJson = localStorage.getItem('pets');
@@ -48,5 +52,9 @@ export class FilterComponent {
     pet.isFavorite = !pet.isFavorite;
     // Update local storage
     localStorage.setItem('pets', JSON.stringify(this.pets));
+  }
+
+  redirectToPet(blog: any) {
+    this.router.navigate(['/pet']);
   }
 }

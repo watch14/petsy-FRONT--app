@@ -89,9 +89,8 @@
             Age: <strong>{{ pet.petAge }}</strong>
           </p>
         </div>
-        <!-- Display petAge -->
         <div class="adopt-like">
-          <button>Adopt Pet</button>
+          <button (click)="redirectToPet(pet)">Adopt Pet</button>
           <img
             [src]="
               pet.isFavorite

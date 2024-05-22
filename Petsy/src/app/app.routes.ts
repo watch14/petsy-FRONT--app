@@ -5,6 +5,7 @@ import { CategorysComponent } from './categorys/categorys.component';
 import { FilterComponent } from './filter/filter.component';
 import { BlogsPageComponent } from './blogs-page/blogs-page.component';
 import { BlogComponent } from './blog/blog.component';
+import { PetPageComponent } from './pet-page/pet-page.component';
 
 export const routes: Routes = [
     {'path': '', component:HomePageComponent},
@@ -12,4 +13,5 @@ export const routes: Routes = [
     {'path': 'animal_filter', component:FilterComponent},
     {'path': 'blogs', component:BlogsPageComponent},
     {'path': 'blog', component:BlogComponent},
+    {'path': 'pet', component:PetPageComponent},
 ];
