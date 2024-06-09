@@ -51,7 +51,6 @@ p{
     justify-content: center;
     gap: 32px;
 }
-
 .all-dropdowns p{
     color: var(--black-700, #222);
     font-family: Montserrat;
@@ -94,6 +93,7 @@ option{
 
 
  .search{
+    max-width: 300px;
     width: 100%;
     height: 50px;
     padding: 16px 24px;
@@ -245,6 +245,7 @@ option{
         display: grid;
         gap: 24px;
         grid-template-columns: 1fr;
+        padding: 20px;
     }
     .filter{
         display: grid;
@@ -256,7 +257,7 @@ option{
     }
 
     .search{
-        max-width: 400px;
+        max-width: 300px;
         margin-left: auto;
     }
     .all-dropdowns{
