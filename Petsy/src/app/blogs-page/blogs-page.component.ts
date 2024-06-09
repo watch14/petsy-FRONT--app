@@ -1,24 +1,24 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, OnInit } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import mammoth from 'mammoth'; // Import Mammoth.js for Word to HTML conversion
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-blogs-page',
   standalone: true,
-  imports: [CommonModule,
-            RouterLink,
-            RouterModule,
-  ],
+  imports: [CommonModule, RouterLink, RouterModule],
   templateUrl: './blogs-page.component.html',
-  styleUrl: './blogs-page.component.css'
+  styleUrls: ['./blogs-page.component.css'] // Use styleUrls instead of styleUrl
 })
-export class BlogsPageComponent {
-
-  constructor(private router: Router, private sanitizer: DomSanitizer) {}
-
+export class BlogsPageComponent implements OnInit {
+  constructor(
+    private router: Router,
+    private sanitizer: DomSanitizer,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   blogs: { blogPicture: string, blogName: string, blogContent: string }[] = [
     {
@@ -43,42 +43,43 @@ export class BlogsPageComponent {
     }
   ];
 
-
   ngOnInit(): void {
-    this.blogs.forEach(blog => {
-      this.loadContentFromWordFile(blog);
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      this.blogs.forEach(blog => {
+        this.loadContentFromWordFile(blog);
+      });
+    }
   }
 
-
   redirectToBlog(blog: any) {
-    console.log(blog)
-    this.router.navigate(['/blog'], { 
+    console.log(blog);
+    this.router.navigate(['/blog'], {
       queryParams: { blogname: blog.blogName },
       state: { blogData: blog }
     });
   }
 
-
-
   loadContentFromWordFile(blog: { blogPicture: string, blogName: string, blogContent: string }) {
-    // Load content from Word file
-    fetch(`../../assets/blogs/${blog.blogName}.docx`)
-      .then(response => response.arrayBuffer())
-      .then(arrayBuffer => {
-        // Convert Word content to HTML
-        mammoth.convertToHtml({ arrayBuffer: arrayBuffer })
-          .then((result: { value: string }) => {
-            // Update the blog content
-            blog.blogContent = result.value;
-          })
-          .catch((err: any) => {
-            console.error(`Error converting Word to HTML for ${blog.blogName}:`, err);
-          });
-      })
-      .catch(error => {
-        console.error(`Error fetching Word file for ${blog.blogName}:`, error);
-      });
+    if (isPlatformBrowser(this.platformId)) {
+      // Correctly construct the URL
+      const fileUrl = new URL(`../../assets/blogs/${encodeURIComponent(blog.blogName)}.docx`, window.location.href).toString();
+      fetch(fileUrl)
+        .then(response => response.arrayBuffer())
+        .then(arrayBuffer => {
+          // Convert Word content to HTML
+          mammoth.convertToHtml({ arrayBuffer: arrayBuffer })
+            .then((result: { value: string }) => {
+              // Update the blog content
+              blog.blogContent = result.value;
+            })
+            .catch((err: any) => {
+              console.error(`Error converting Word to HTML for ${blog.blogName}:`, err);
+            });
+        })
+        .catch(error => {
+          console.error(`Error fetching Word file for ${blog.blogName}:`, error);
+        });
+    }
   }
 
   getFirstParagraph(content: string): SafeHtml {

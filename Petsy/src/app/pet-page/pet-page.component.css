@@ -19,9 +19,12 @@ p{
 
 .pet{
     display: grid;
-    gap: 24px;
+    gap: 60px;
     grid-template-columns: 1fr 1fr; 
 
+}
+.pet-img{
+    width: 100%;
 }
 
 .about-wraper{
@@ -50,4 +53,10 @@ p{
     border: none; 
     border-top: 1px solid #ddd; 
     
+}
+
+.description{
+    padding: 40px 32px;
+    border-radius: 15px;
+    background: var(--white-500, #EBEBEB);
 }
