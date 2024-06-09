@@ -22,24 +22,45 @@ h2{
     flex-direction: column;
     gap: 60px;
 }
-
 .pet{
     display: grid;
     gap: 60px;
     grid-template-columns: 1fr 1fr; 
 
 }
-ng-image-slider{
-    height: 100px;
+.slider{
+    border-radius: 20px;
 }
-.carouselle, .pet-img{
+.carouselle{
     width: 100%;
+}
+
+.pet-img{
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 32px;
 }
 
 .info{
     display: flex;
     flex-direction: column;
     gap: 40px;
+}
+.item{
+    color: var(--black-700, #222);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16.413px; /* 102.584% */
+}
+.aboutInfo{
+    color: var(--Grey, #667479);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16.413px; /* 102.584% */
 }
 
 .about-wraper{
@@ -57,11 +78,25 @@ ng-image-slider{
 }
 
 .info-wrapper{
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
+    display: grid;
+    gap: 40px ;
+    grid-template-columns: 1fr 20fr;
+    margin: 20px 0;
 }
 
+.ownerinfo{
+    padding-left: 32px;
+}
+
+.oInfo{
+    color: var(--black-700, #222);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 19px; /* 95% */
+    letter-spacing: 0.6px;
+}
 .ownerinfo hr {
     width: 100%;
     margin: 20px 0; 

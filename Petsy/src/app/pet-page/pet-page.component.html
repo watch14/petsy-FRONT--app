@@ -6,14 +6,15 @@
         src="../../assets/images/pet_pics/pet (1).png"
         alt=""
       />
-      <ng-image-slider
-        #nav
-        [images]="imageObject"
-        [infinite]="true"
-        [autoSlide]="3"
-        [manageImageRatio]="true"
-        slideImage="1"
-      ></ng-image-slider>
+      <div class="slider">
+        <ng-image-slider
+          #nav
+          [images]="imageObject"
+          [infinite]="true"
+          [autoSlide]="5"
+          slideImage="1"
+        ></ng-image-slider>
+      </div>
     </div>
     <div class="info">
       <h1>Titi - Pomeranian White</h1>
@@ -21,8 +22,8 @@
         <h2>About :</h2>
         <div class="about-wraper">
           <div class="pet_about" *ngFor="let item of about; let i = index">
-            <p>{{ item }}</p>
-            <p>{{ aboutInfo[i] }}</p>
+            <p class="item">{{ item }}</p>
+            <p class="aboutInfo">{{ aboutInfo[i] }}</p>
           </div>
         </div>
       </div>
@@ -31,8 +32,8 @@
         <h2>Owner Contact info :</h2>
         <div *ngFor="let item of owner; let last = last" class="ownerinfo">
           <div class="info-wrapper">
-            <img [src]="item.icone" />
-            <p>{{ item.ownerInfo }}</p>
+            <img class="oIcone" [src]="item.icone" />
+            <p class="oInfo">{{ item.ownerInfo }}</p>
           </div>
           <hr *ngIf="!last" />
           <!-- Horizontal line -->
