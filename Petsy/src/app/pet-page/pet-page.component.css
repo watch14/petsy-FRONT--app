@@ -5,8 +5,11 @@
     line-height: 19px;
     letter-spacing: 0.36px;
 }
-p{
+p, h1, h2{
     margin: 0px;
+}
+h2{
+   margin-bottom: 32px; 
 }
 
 .wraper{
@@ -15,6 +18,9 @@ p{
     padding: 60px 40px;
     margin-inline: auto;
 
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
 }
 
 .pet{
@@ -25,6 +31,12 @@ p{
 }
 .pet-img{
     width: 100%;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .about-wraper{
@@ -55,8 +67,35 @@ p{
     
 }
 
+h1{
+    color: var(--Neutral-Color-100, #00171F);
+    font-family: Montserrat;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 53.9px; /* 112.292% */
+}
+
+h2{
+    color: var(--black-700, #222);
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16.413px; /* 58.619% */
+}
 .description{
     padding: 40px 32px;
     border-radius: 15px;
     background: var(--white-500, #EBEBEB);
+
+    color: var(--black-700, #222);
+
+    /* text */
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24.4px; /* 152.5% */
+    letter-spacing: -0.16px;
 }
