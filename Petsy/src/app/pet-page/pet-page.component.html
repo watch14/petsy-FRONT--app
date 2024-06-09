@@ -6,6 +6,14 @@
         src="../../assets/images/pet_pics/pet (1).png"
         alt=""
       />
+      <ng-image-slider
+        #nav
+        [images]="imageObject"
+        [infinite]="true"
+        [autoSlide]="3"
+        [manageImageRatio]="true"
+        slideImage="1"
+      ></ng-image-slider>
     </div>
     <div class="info">
       <h1>Titi - Pomeranian White</h1>

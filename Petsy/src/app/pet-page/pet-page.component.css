@@ -29,7 +29,10 @@ h2{
     grid-template-columns: 1fr 1fr; 
 
 }
-.pet-img{
+ng-image-slider{
+    height: 100px;
+}
+.carouselle, .pet-img{
     width: 100%;
 }
 
@@ -99,3 +102,4 @@ h2{
     line-height: 24.4px; /* 152.5% */
     letter-spacing: -0.16px;
 }
+
